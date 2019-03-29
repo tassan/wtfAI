@@ -1,7 +1,5 @@
 chrome.runtime.onInstalled.addListener(function() {
-  chrome.storage.sync.set({color: '#3aa757'}, function() {
-    console.log('WTF');
-  });
+
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({
@@ -12,6 +10,3 @@ chrome.runtime.onInstalled.addListener(function() {
     }]);
   });
 });
-
-let activateWtf = document.getElementById('activate');
-let deactivateWtf = document.getElementById('deactivate');
