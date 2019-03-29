@@ -1,0 +1,1 @@
+a chrome extension to show what AI really is. ps.: don't take this seriously
