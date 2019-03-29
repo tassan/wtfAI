@@ -1,0 +1,42 @@
+{
+    "name": "WTF is AI?",
+    "version": "1.0",
+    "description": "Telling you what AI really is",
+    "background": {
+        "scripts": ["ext/contentscript.js"],
+        "persistent": false
+    },
+    "content_scripts" : [
+        {
+            "matches" : [
+                "http://*/*",
+                "https://*/*"
+            ],
+            "js": [
+                "ext/contentScript.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "manifest_version": 2,
+    "browser_action": {
+        "default_popup": "wtfai.html",
+        "default_icon": "images/robot.png"
+    },
+    "icons": {
+        "16": "images/robot.png",
+        "32": "images/robot.png",
+        "48": "images/robot.png",
+        "128": "images/robot.png"
+    },
+    "commands": {
+        "_execute_browser_action": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+F",
+            "mac": "MacCtrl+Shift+F"
+          },
+          "description": "Opens wtfai.html"
+        }
+      },
+    "permissions": ["activeTab","declarativeContent","storage"]
+}
